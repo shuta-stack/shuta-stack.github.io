@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#1C3557"/>
+  <rect x="0" y="0" width="8" height="630" fill="#c5a880"/>
+  <rect x="60" y="60" width="1080" height="510" rx="4" fill="none" stroke="#c5a880" stroke-width="1" opacity="0.3"/>
+
+  <!-- 左上ラベル -->
+  <text x="100" y="130" font-family="'Noto Serif JP', serif" font-size="18" fill="#c5a880" letter-spacing="4">税理士事務所</text>
+
+  <!-- メイン見出し -->
+  <text x="100" y="230" font-family="'Noto Serif JP', serif" font-size="56" font-weight="900" fill="#ffffff">津野秀太税理士事務所</text>
+
+  <!-- サブコピー -->
+  <text x="100" y="310" font-family="'Noto Serif JP', serif" font-size="28" fill="#c5a880">相続・事業承継・組織再編の専門家</text>
+
+  <!-- 区切り線 -->
+  <rect x="100" y="350" width="60" height="2" fill="#c5a880"/>
+
+  <!-- 実績 -->
+  <text x="100" y="420" font-family="'Noto Serif JP', serif" font-size="20" fill="#A8C4E0">事業承継・相続コンサル　100件超の実績</text>
+  <text x="100" y="460" font-family="'Noto Serif JP', serif" font-size="20" fill="#A8C4E0">福岡市 ／ 全国オンライン対応 ／ 初回相談無料</text>
+
+  <!-- URL -->
+  <text x="100" y="540" font-family="monospace" font-size="18" fill="#c5a880" opacity="0.8">shuta-stack.github.io</text>
+</svg>
