@@ -739,6 +739,163 @@
       color: #4A6080;
     }
 
+    /* ========== DX / SELF-ACCOUNTING ========== */
+    .dx { background: var(--bg-light); }
+
+    .dx-lead {
+      max-width: 780px;
+      font-size: 15px;
+      color: var(--text-sub);
+      line-height: 2;
+      margin-bottom: 8px;
+    }
+    .dx-lead strong { color: var(--navy); font-weight: 700; }
+    .dx-lead .accent { color: var(--gold); font-weight: 700; }
+
+    .dx-wheel-wrap {
+      display: flex;
+      justify-content: center;
+      margin: 48px 0 44px;
+    }
+
+    .dx-wheel {
+      position: relative;
+      width: 520px;
+      height: 520px;
+      flex-shrink: 0;
+    }
+
+    .dx-wheel-svg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
+
+    .dx-center, .dx-node {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      z-index: 1;
+    }
+
+    .dx-center {
+      width: 172px;
+      height: 172px;
+      background: radial-gradient(circle at 50% 34%, #fbf6ec 0%, #ecdcbb 68%, #d8bd8e 100%);
+      border: 2px solid var(--gold);
+      box-shadow: 0 10px 32px rgba(28,53,87,0.20);
+      transform: translate(-50%, -50%);
+    }
+    .dx-center small {
+      font-size: 12px;
+      color: #a8855a;
+      letter-spacing: 0.08em;
+      font-weight: 700;
+    }
+    .dx-center b {
+      font-size: 27px;
+      color: var(--navy);
+      font-weight: 900;
+      line-height: 1.25;
+      margin-top: 3px;
+    }
+
+    .dx-node {
+      width: 118px;
+      height: 118px;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+      border: 1.5px solid rgba(197,168,128,0.55);
+      box-shadow: 0 4px 16px rgba(28,53,87,0.18);
+      color: #fff;
+      font-size: 13.5px;
+      font-weight: 700;
+      line-height: 1.4;
+      padding: 8px;
+      transition: filter 0.2s, box-shadow 0.2s;
+    }
+    .dx-node:hover { filter: brightness(1.15); box-shadow: 0 8px 26px rgba(28,53,87,0.32); }
+    .dx-node span {
+      font-size: 10px;
+      color: var(--gold-light);
+      font-weight: 700;
+      display: block;
+      margin-bottom: 3px;
+      letter-spacing: 0.04em;
+    }
+
+    .dx-mobile-center { display: none; }
+
+    .dx-pills {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-bottom: 40px;
+    }
+    .dx-pill {
+      background: linear-gradient(135deg, #c5a880 0%, #d8bd8e 100%);
+      color: var(--navy);
+      border-radius: 6px;
+      padding: 13px 16px;
+      font-size: 13px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      box-shadow: 0 2px 8px rgba(197,168,128,0.35);
+    }
+    .dx-pill::after { content: '›'; font-size: 17px; line-height: 1; opacity: 0.7; }
+
+    .dx-points {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .dx-point {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--gold);
+      border-radius: 0 6px 6px 0;
+      padding: 24px 24px;
+    }
+    .dx-point h4 {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 8px;
+      line-height: 1.4;
+    }
+    .dx-point p { font-size: 13px; color: var(--text-sub); line-height: 1.8; }
+
+    @media (max-width: 600px) {
+      .dx-wheel { display: none; }
+      .dx-mobile-center {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: 168px; height: 168px;
+        border-radius: 50%;
+        margin: 32px auto 36px;
+        background: radial-gradient(circle at 50% 34%, #fbf6ec 0%, #ecdcbb 68%, #d8bd8e 100%);
+        border: 2px solid var(--gold);
+        box-shadow: 0 10px 32px rgba(28,53,87,0.20);
+      }
+      .dx-mobile-center small { font-size: 12px; color: #a8855a; font-weight: 700; }
+      .dx-mobile-center b { font-size: 26px; color: var(--navy); font-weight: 900; line-height: 1.25; margin-top: 3px; }
+      .dx-pills { grid-template-columns: repeat(2, 1fr); }
+      .dx-points { grid-template-columns: 1fr; }
+    }
+
     /* ========== RESPONSIVE ========== */
     @media (max-width: 768px) {
       header { padding: 0 20px; }
@@ -766,6 +923,7 @@
     <nav>
       <a href="#strength">強み</a>
       <a href="#services">サービス</a>
+      <a href="#dx">DX・自計化</a>
       <a href="#message">代表メッセージ</a>
       <a href="#profile">プロフィール</a>
       <a href="#flow">ご契約の流れ</a>
@@ -884,6 +1042,85 @@
         <h3>会社設立支援</h3>
         <p>設立から融資・補助金活用までワンストップで支援します。</p>
         <div class="service-price">スポット 55,000円〜（税込）</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DX / SELF-ACCOUNTING -->
+<section class="dx" id="dx">
+  <div class="section-inner">
+    <p class="section-label">DX &amp; Self-Accounting</p>
+    <h2 class="section-title">「DXによる自計化」を中心とした、<br>循環型のサポート体制</h2>
+    <p class="dx-lead">
+      私たちは、<strong>記帳代行で終わる「申告だけの税理士」ではありません。</strong>
+      クラウド会計（マネーフォワード）を活用した<span class="accent">自計化</span>を起点に、翌月には数字が見える「タイムリーな経営」を実現します。
+      経理のDX化を土台として、月次決算・経営計画・資金繰り・相続/事業承継対策までを一つの循環としてご提供する——
+      これが、<strong>価格以上の価値を生む当事務所の関与スタイル</strong>です。
+    </p>
+
+    <div class="dx-wheel-wrap">
+      <div class="dx-wheel" role="img" aria-label="DXによる自計化を中心に、8つのサービスが循環する図">
+        <svg class="dx-wheel-svg" viewBox="0 0 520 520" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="260" cy="260" r="196" fill="none" stroke="#E2DDD8" stroke-width="2"/>
+          <circle cx="260" cy="260" r="196" fill="none" stroke="#c5a880" stroke-width="1" stroke-opacity="0.35" stroke-dasharray="2 8"/>
+          <g stroke="#c5a880" stroke-width="1.5" stroke-opacity="0.5">
+            <line x1="260" y1="260" x2="260" y2="64"/>
+            <line x1="260" y1="260" x2="399" y2="121"/>
+            <line x1="260" y1="260" x2="456" y2="260"/>
+            <line x1="260" y1="260" x2="399" y2="399"/>
+            <line x1="260" y1="260" x2="260" y2="456"/>
+            <line x1="260" y1="260" x2="121" y2="399"/>
+            <line x1="260" y1="260" x2="64" y2="260"/>
+            <line x1="260" y1="260" x2="121" y2="121"/>
+          </g>
+        </svg>
+
+        <div class="dx-center">
+          <small>DXによる</small>
+          <b>自計化</b>
+        </div>
+
+        <div class="dx-node" style="transform: translate(-50%,-50%) translate(0,-196px);"><span>01</span>クラウド会計<br>導入支援</div>
+        <div class="dx-node" style="transform: translate(-50%,-50%) translate(139px,-139px);"><span>02</span>月次決算・<br>月次報告</div>
+        <div class="dx-node" style="transform: translate(-50%,-50%) translate(196px,0);"><span>03</span>経営計画<br>策定支援</div>
+        <div class="dx-node" style="transform: translate(-50%,-50%) translate(139px,139px);"><span>04</span>資金繰り・<br>財務コンサル</div>
+        <div class="dx-node" style="transform: translate(-50%,-50%) translate(0,196px);"><span>05</span>税制改正・<br>最新情報提供</div>
+        <div class="dx-node" style="transform: translate(-50%,-50%) translate(-139px,139px);"><span>06</span>書面添付<br>制度</div>
+        <div class="dx-node" style="transform: translate(-50%,-50%) translate(-196px,0);"><span>07</span>相続・事業<br>承継対策</div>
+        <div class="dx-node" style="transform: translate(-50%,-50%) translate(-139px,-139px);"><span>08</span>税務顧問・<br>節税提案</div>
+      </div>
+    </div>
+
+    <!-- モバイル用センター表示 -->
+    <div class="dx-mobile-center">
+      <small>DXによる</small>
+      <b>自計化</b>
+    </div>
+
+    <div class="dx-pills">
+      <div class="dx-pill">クラウド会計導入支援</div>
+      <div class="dx-pill">月次決算・月次報告</div>
+      <div class="dx-pill">経営計画策定支援</div>
+      <div class="dx-pill">資金繰り・財務コンサル</div>
+      <div class="dx-pill">税制改正・最新情報提供</div>
+      <div class="dx-pill">書面添付制度</div>
+      <div class="dx-pill">相続・事業承継対策</div>
+      <div class="dx-pill">税務顧問・節税提案</div>
+    </div>
+
+    <div class="dx-points">
+      <div class="dx-point">
+        <h4>リアルタイムで<br>経営判断ができる</h4>
+        <p>自計化により、過去の数字ではなく「今の数字」で意思決定。試算表の完成を待たず、翌月には経営状況を把握できます。</p>
+      </div>
+      <div class="dx-point">
+        <h4>有資格者が<br>直接伴走する</h4>
+        <p>担当者任せにせず、税理士・津野秀太が一気通貫で関与。DXで効率化した時間を、付加価値の高い提案に充てます。</p>
+      </div>
+      <div class="dx-point">
+        <h4>守りと攻めを<br>同時に強化する</h4>
+        <p>書面添付による税務調査リスクの低減（守り）と、経営計画・資金繰り支援（攻め）。相続・事業承継まで見据えて支援します。</p>
       </div>
     </div>
   </div>
