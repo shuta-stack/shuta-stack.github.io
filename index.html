@@ -896,6 +896,68 @@
       .dx-points { grid-template-columns: 1fr; }
     }
 
+    /* ========== COLUMN（注目テーマ） ========== */
+    .col-subhead {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--navy);
+      padding-left: 12px;
+      border-left: 4px solid var(--gold);
+      margin: 0 0 20px;
+      line-height: 1.5;
+    }
+    .col-feature {
+      display: block;
+      background: var(--navy);
+      border-radius: 6px;
+      padding: 36px 40px;
+      text-decoration: none;
+      margin-bottom: 24px;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .col-feature:hover { box-shadow: 0 8px 24px rgba(28,53,87,0.25); transform: translateY(-2px); }
+    .col-feature-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .col-tag {
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      border: 1px solid var(--gold);
+      color: var(--gold-light);
+      padding: 2px 10px;
+      border-radius: 2px;
+    }
+    .col-tag-solid { background: var(--gold); color: #fff; }
+    .col-feature-title { font-size: clamp(19px, 2.4vw, 24px); font-weight: 900; color: #fff; line-height: 1.5; margin-bottom: 12px; }
+    .col-feature-desc { font-size: 14px; color: #dbe4ee; line-height: 1.8; max-width: 760px; }
+    .col-feature-meta { font-size: 12px; color: #A8C4E0; margin-top: 12px; }
+    .col-feature .col-more { color: var(--gold-light); }
+    .col-pick-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-bottom: 56px;
+    }
+    .col-pick {
+      display: block;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--navy);
+      border-radius: 4px;
+      padding: 24px 28px;
+      text-decoration: none;
+      transition: box-shadow 0.2s;
+    }
+    .col-pick:hover { box-shadow: 0 6px 18px rgba(0,0,0,0.08); }
+    .col-pick-cat { font-size: 11px; color: var(--gold); letter-spacing: 0.1em; margin-bottom: 8px; }
+    .col-pick-title { font-size: 17px; font-weight: 700; color: var(--navy); line-height: 1.5; margin-bottom: 10px; }
+    .col-pick-desc { font-size: 13px; color: var(--text-sub); line-height: 1.7; }
+    .col-more { font-size: 12px; color: var(--gold); margin-top: 14px; font-weight: 700; }
+
+    @media (max-width: 768px) {
+      .col-feature { padding: 24px 20px; }
+      .col-pick-grid { grid-template-columns: 1fr; gap: 16px; }
+      .col-pick { padding: 20px; }
+    }
+
     /* ========== RESPONSIVE ========== */
     @media (max-width: 768px) {
       header { padding: 0 20px; }
@@ -1314,10 +1376,52 @@
   <div class="section-inner">
     <p class="section-label">Column</p>
     <h2 class="section-title">コラム・お役立ち情報</h2>
-    <p style="font-size:15px; color:var(--text-sub); margin-bottom:40px; max-width:600px;">
-      相続税・事業承継・税務に関する情報をnoteで発信しています。<br>
-      「難しそう」なテーマも、わかりやすくお伝えします。
+    <p style="font-size:15px; color:var(--text-sub); margin-bottom:40px; max-width:640px;">
+      相続・事業承継の重要テーマは、このホームページで要点と事務所の視点をまとめています。<br>
+      そのほかの税務の話題は、noteで発信しています。
     </p>
+
+    <!-- 注目テーマ（HP内の要約ページ） -->
+    <h3 class="col-subhead">相続・事業承継の注目テーマ</h3>
+    <a href="column/hijoujou-kabushiki-hyoka.html" class="col-feature">
+      <div class="col-feature-tags">
+        <span class="col-tag">事業承継</span>
+        <span class="col-tag">随時更新</span>
+        <span class="col-tag col-tag-solid">noteマネー掲載</span>
+      </div>
+      <p class="col-feature-title">非上場株式の「評価方式見直し」最新動向まとめ</p>
+      <p class="col-feature-desc">類似業種比準方式の廃止と「残余利益方式」への移行案を、国税庁の有識者会議の回ごとに要約しています。会社規模による影響の違いや、退職金などによる株価対策への影響も、実際に試算した事務所の視点で解説します。</p>
+      <p class="col-feature-meta">最新：第6回（2026年9月16日）資料まで反映</p>
+      <p class="col-more">要点と事務所の視点を読む →</p>
+    </a>
+    <div class="col-pick-grid">
+      <a href="column/jigyo-shokei-zeisei.html" class="col-pick">
+        <p class="col-pick-cat">事業承継</p>
+        <p class="col-pick-title">事業承継税制（納税猶予）の仕組みと落とし穴</p>
+        <p class="col-pick-desc">自社株の贈与税・相続税の納税猶予。令和9年に迫る2つの期限と、使う前に知っておきたい注意点。</p>
+        <p class="col-more">要点と事務所の視点を読む →</p>
+      </a>
+      <a href="column/shokibo-takuchi.html" class="col-pick">
+        <p class="col-pick-cat">相続税</p>
+        <p class="col-pick-title">自宅の土地が最大80%減額に？「小規模宅地等の特例」</p>
+        <p class="col-pick-desc">経営者が見落としがちな同居要件・会社への土地の貸し方・遺産分割のポイント。</p>
+        <p class="col-more">要点と事務所の視点を読む →</p>
+      </a>
+      <a href="column/meigi-yokin.html" class="col-pick">
+        <p class="col-pick-cat">相続税</p>
+        <p class="col-pick-title">その「家族名義の預金」、相続税の対象かもしれません</p>
+        <p class="col-pick-desc">名義預金の判断基準と、生前贈与を税務上も成立させるためのポイント。</p>
+        <p class="col-more">要点と事務所の視点を読む →</p>
+      </a>
+      <a href="column/kodomo-nashi-yuigon.html" class="col-pick">
+        <p class="col-pick-cat">相続</p>
+        <p class="col-pick-title">子どものいないご夫婦こそ、遺言が一番効きます</p>
+        <p class="col-pick-desc">兄弟姉妹や甥・姪も相続人に。遺留分のない兄弟姉妹には、遺言がそのまま効きます。</p>
+        <p class="col-more">要点と事務所の視点を読む →</p>
+      </a>
+    </div>
+
+    <h3 class="col-subhead">noteの記事</h3>
     <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:24px; margin-bottom:40px;">
       <a href="https://note.com/tsuno_tax/n/n528cb661531a" target="_blank" rel="noopener noreferrer"
         style="display:block; background:#fff; border:1px solid var(--border); border-top:4px solid var(--gold); border-radius:4px; padding:28px 24px; text-decoration:none; transition:box-shadow 0.2s;">
@@ -1354,20 +1458,6 @@
         <p style="font-size:13px; color:var(--text-sub); line-height:1.7;">2026年税制改正で経過措置のスケジュールが見直されました。最新の控除割合と、実務で気をつけたいポイントを解説します。</p>
         <p style="font-size:12px; color:var(--gold); margin-top:16px; font-weight:700;">続きを読む →</p>
       </a>
-      <a href="https://note.com/tsuno_tax/n/n5eeaf3dfef9e" target="_blank" rel="noopener noreferrer"
-        style="display:block; background:#fff; border:1px solid var(--border); border-top:4px solid var(--gold); border-radius:4px; padding:28px 24px; text-decoration:none; transition:box-shadow 0.2s;">
-        <p style="font-size:11px; color:var(--gold); letter-spacing:0.1em; margin-bottom:10px;">相続税</p>
-        <p style="font-size:16px; font-weight:700; color:var(--navy); margin-bottom:12px; line-height:1.5;">自宅の土地が最大80%減額に？ 経営者こそ知っておきたい「小規模宅地等の特例」</p>
-        <p style="font-size:13px; color:var(--text-sub); line-height:1.7;">自宅や事業用の土地は、要件を満たせば評価額を最大80%減額できます。経営者が見落としがちな同居要件・地代のポイントを解説します。</p>
-        <p style="font-size:12px; color:var(--gold); margin-top:16px; font-weight:700;">続きを読む →</p>
-      </a>
-      <a href="https://note.com/tsuno_tax/n/n26eb0c9f8476" target="_blank" rel="noopener noreferrer"
-        style="display:block; background:#fff; border:1px solid var(--border); border-top:4px solid var(--gold); border-radius:4px; padding:28px 24px; text-decoration:none; transition:box-shadow 0.2s;">
-        <p style="font-size:11px; color:var(--gold); letter-spacing:0.1em; margin-bottom:10px;">事業承継</p>
-        <p style="font-size:16px; font-weight:700; color:var(--navy); margin-bottom:12px; line-height:1.5;">自社株の相続税・贈与税が「ゼロ」になる？ 事業承継税制（納税猶予）の仕組みと落とし穴</p>
-        <p style="font-size:13px; color:var(--text-sub); line-height:1.7;">自社株の納税猶予制度の仕組みと、令和9年に迫る特例措置の期限、継続要件などの注意点を解説します。</p>
-        <p style="font-size:12px; color:var(--gold); margin-top:16px; font-weight:700;">続きを読む →</p>
-      </a>
       <a href="https://note.com/tsuno_tax/n/ndb8a78dab2ba" target="_blank" rel="noopener noreferrer"
         style="display:block; background:#fff; border:1px solid var(--border); border-top:4px solid var(--gold); border-radius:4px; padding:28px 24px; text-decoration:none; transition:box-shadow 0.2s;">
         <p style="font-size:11px; color:var(--gold); letter-spacing:0.1em; margin-bottom:10px;">税務顧問・経営</p>
@@ -1396,32 +1486,11 @@
         <p style="font-size:13px; color:var(--text-sub); line-height:1.7;">2割特例は2026年9月30日の属する課税期間で終了します。決算月ごとの終了時期の違いと、終了後に検討すべき本則課税・簡易課税・3割特例のポイントを解説します。</p>
         <p style="font-size:12px; color:var(--gold); margin-top:16px; font-weight:700;">続きを読む →</p>
       </a>
-      <a href="https://note.com/tsuno_tax/n/na02f58e6860a" target="_blank" rel="noopener noreferrer"
-        style="display:block; background:#fff; border:1px solid var(--border); border-top:4px solid var(--gold); border-radius:4px; padding:28px 24px; text-decoration:none; transition:box-shadow 0.2s;">
-        <p style="font-size:11px; color:var(--gold); letter-spacing:0.1em; margin-bottom:10px;">相続税</p>
-        <p style="font-size:16px; font-weight:700; color:var(--navy); margin-bottom:12px; line-height:1.5;">その「家族名義の預金」、実は相続税の対象かもしれません ―「名義預金」で失敗しないための3つのポイント</p>
-        <p style="font-size:13px; color:var(--text-sub); line-height:1.7;">名義預金の判断基準（資金源・管理実態・贈与の認識）と、生前贈与を実務上成立させるためのポイント、税務調査で見られる視点を解説します。</p>
-        <p style="font-size:12px; color:var(--gold); margin-top:16px; font-weight:700;">続きを読む →</p>
-      </a>
-      <a href="https://note.com/tsuno_tax/n/n883e66c4c6ab" target="_blank" rel="noopener noreferrer"
-        style="display:block; background:#fff; border:1px solid var(--border); border-top:4px solid var(--gold); border-radius:4px; padding:28px 24px; text-decoration:none; transition:box-shadow 0.2s;">
-        <p style="font-size:11px; color:var(--gold); letter-spacing:0.1em; margin-bottom:10px;">事業承継</p>
-        <p style="font-size:16px; font-weight:700; color:var(--navy); margin-bottom:12px; line-height:1.5;">自社株の評価、いよいよ算式まで見えてきました ― 非上場株式の「評価方式見直し」で今のうちに知っておきたい3つのこと</p>
-        <p style="font-size:13px; color:var(--text-sub); line-height:1.7;">類似業種比準方式の廃止と残余利益方式への移行案、会社規模による影響の違い、退職金等の株価対策への対応など、2026年9月の有識者会議（第6回）資料の内容を解説します。</p>
-        <p style="font-size:12px; color:var(--gold); margin-top:16px; font-weight:700;">続きを読む →</p>
-      </a>
       <a href="https://note.com/tsuno_tax/n/na8774060325b" target="_blank" rel="noopener noreferrer"
         style="display:block; background:#fff; border:1px solid var(--border); border-top:4px solid var(--gold); border-radius:4px; padding:28px 24px; text-decoration:none; transition:box-shadow 0.2s;">
         <p style="font-size:11px; color:var(--gold); letter-spacing:0.1em; margin-bottom:10px;">相続税</p>
         <p style="font-size:16px; font-weight:700; color:var(--navy); margin-bottom:12px; line-height:1.5;">2027年1月から「生前贈与の持ち戻し」が延び始めます ― 暦年贈与を続けている方が今年のうちに確認しておきたい3つのこと</p>
         <p style="font-size:13px; color:var(--text-sub); line-height:1.7;">生前贈与加算の対象期間が3年から7年へ段階的に延びるスケジュール、延長部分の100万円控除、「年内の駆け込み贈与」では対策にならない理由を解説します。</p>
-        <p style="font-size:12px; color:var(--gold); margin-top:16px; font-weight:700;">続きを読む →</p>
-      </a>
-      <a href="https://note.com/tsuno_tax/n/n853caf0ffe4d" target="_blank" rel="noopener noreferrer"
-        style="display:block; background:#fff; border:1px solid var(--border); border-top:4px solid var(--gold); border-radius:4px; padding:28px 24px; text-decoration:none; transition:box-shadow 0.2s;">
-        <p style="font-size:11px; color:var(--gold); letter-spacing:0.1em; margin-bottom:10px;">相続税</p>
-        <p style="font-size:16px; font-weight:700; color:var(--navy); margin-bottom:12px; line-height:1.5;">子どものいないご夫婦こそ、遺言が一番効きます ― 「相続税ゼロ」でも安心できない3つの理由</p>
-        <p style="font-size:13px; color:var(--text-sub); line-height:1.7;">子どもがいないと兄弟姉妹や甥・姪も相続人になる仕組みと、遺言の有無で変わる遺産分割協議・相続税の負担、兄弟姉妹に遺留分がないため遺言がそのまま効く理由を解説します。</p>
         <p style="font-size:12px; color:var(--gold); margin-top:16px; font-weight:700;">続きを読む →</p>
       </a>
       <a href="https://note.com/tsuno_tax/n/n61b3a9ff5881" target="_blank" rel="noopener noreferrer"
